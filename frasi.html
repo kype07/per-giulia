@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frasi</title>
+</head>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Gaegu:400,700');
+
+div.ek-dia {width: 610px; height: 500px; margin: 0 auto; /*overflow: hidden;*/ padding: 10px; position: relative;}
+
+div.ek-dia div.ek-cov, div.ek-dia div.ek-in-cov {display: block; width: 305px; height: 500px;background-color: #d47070;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23aae2ff' fill-opacity='0.4' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E"); border-radius: 0 25px 25px 0; margin: 0 auto; transition: 1s linear all; transform-origin: left center; position: absolute; right: 10px;}
+
+div.ek-dia div.ek-cov {z-index: 4; transition: z-index 7.5s step-end, 1s linear all;}
+
+div.ek-dia div.ek-cov > span {display: block; width: 230px; min-height: 20px; margin: 0 auto; background: #fbfbfb; position: relative; top: 35px; padding: 10px; text-align: center; outline: #d47070 3px solid; outline-offset: -4px; box-shadow: #fbfbfb 0 0 0 3px; transition-delay: 0.5s;}
+
+div.ek-dia input {display: none;}
+div.ek-dia input#bookop + label {display: block; position: absolute; width: 305px; height: 500px; bottom: 10px; z-index: 5; transition: 1s linear all; /*outline: 1px solid red;*/; transform-origin: center bottom;}
+
+div.ek-dia input#bookop + label:after {display: block; width: 100px; height: 20px;position: absolute; content: "(INDIETRO)"; bottom: -25px; right: 0; transition: 0.5s ease-in-out all; text-align: center; padding: 5px 0 0px 0; font: italic 13px 'georgia';}
+
+div.ek-dia #bookop:checked ~ div.ek-cov {transform: rotatey(180deg); z-index: 1 !important;}
+div.ek-dia div.ek-cov:after {transition-delay: 0.5s; opacity: 0; margin-top: -0.5px;}
+div.ek-dia #bookop:checked ~ div.ek-cov:after, div.ek-dia #bookop:checked + label:after {opacity: 1;}
+div.ek-dia #bookop:checked ~ div.ek-cov span, div.ek-dia #bookop + label:after {opacity: 0;}
+
+div.ek-dia div.ek-cov, div.ek-dia div.ek-in-cov, div.ek-dia #bookop + label {right: 160px;}
+
+div.ek-dia #bookop:checked ~ div.ek-cov, div.ek-dia #bookop:checked ~ div.ek-in-cov, div.ek-dia #bookop:checked + label {right: 10px;}
+
+div.ek-dia #bookop:checked + label {height: 0px;}
+
+div.ek-dia div.ek-in-cov:after, div.ek-dia div.ek-cov:after {width: 295px; height:450px; background: #fbfbfb; border-radius: 0 25px 25px 0; position: absolute; top: 25px; left: 0px; overflow: hidden; transform-origin: right center; content: ""; box-shadow: inset #33333388 2px 0 3px -2px; }
+
+div.ek-dia div.ek-dia-in {width: 0px; height: 460px; padding: 5px; /*outline: 1px solid blue;*/ position: absolute; top: 15px; transition: width 0.78s ease-in 0.00s, right 1s linear 0s; overflow: hidden; right: 170px; z-index: 3;}
+
+div.ek-dia div.ek-dia-in div.in {width: 580px; height: 100%; position: absolute; bottom: 0; right: 0;}
+
+div.ek-dia #bookop:checked ~ div.ek-dia-in {width: 580px; transition: right 1s linear 0s, width 0.8s ease-out 0.25s; right: 20px;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario] + label {width: 35px; height: 18px; display: inline-block; margin: 2px 0 0 10px; z-index: 6; transition: 0.25s ease-in-out all; box-shadow: #ffffff00 0 18px 0, #ffffff00 0 36px 0;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(1) {margin-left: 25px;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(1), div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(5), div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(9) {background: #00ff00cc;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(2), div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(6), div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(10) {background: #ff00ffcc;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(3), div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(7){background: #00ffffcc;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(4), div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(8){background: #ffff00cc;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario] + label:nth-of-type(5) {margin-right: 45px;}
+
+div.ek-dia div.ek-dia-in div.in div.entradas {width: 570px; height: 430px; position: absolute; bottom: 10px; left: 0px;}
+
+div.ek-dia div.ek-dia-in div.in div.entradas div[class*=entrada] {width: 570px; height: 430px; position: absolute; top: 0; left: 0; opacity: 0; z-index: -1; font: 16px 'gaegu'; font-weight: 700; /*text-align: justify;*/ display: flex; transition: 0.55s ease-in-out all; line-height: 15.5px;}
+
+div.ek-dia div.ek-dia-in div.in div.entradas div[class*=entrada] span {width: 275px; height: 429px; padding: 0 5px; display: block; overflow: hidden;}
+
+div.ek-dia div.entradas div[class*=entrada] span nm {display: block; width: 100%; height: 26px; text-align: center; font-size: 24px; padding-top: 6px;}
+
+div.ek-dia div.entradas div[class*=entrada] span strong {color: #000088;}
+
+div.ek-dia div.entradas div[class*=entrada] span i {color: #ca0000;}
+
+div.ek-dia div.entradas div[class*=entrada] span u {text-decoration: none; background: #ffff00bc}
+
+div.ek-dia div.entradas div[class*=entrada] span.verd u {text-decoration: none; background: #55ff00bc}
+
+div.ek-dia div.entradas div[class*=entrada] span.rosa u {text-decoration: none; background: #ff00ff88}
+
+div.ek-dia div.entradas div[class*=entrada] span.azul u {text-decoration: none; background: #00ffff88}
+
+div.ek-dia div.ek-dia-in div.in div.entradas div[class*=entrada] span:nth-child(2) {padding-left: 15px; padding-right: 0;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(1), div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(5), div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(9) {box-shadow: #00ff00cc 0 18px 0, #00ff00cc 0 36px 0;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(2), div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(6), div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(10) {box-shadow: #ff00ffcc 0 18px 0, #ff00ffcc 0 36px 0;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(3), div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(7){box-shadow: #00ffffcc 0 18px 0, #00ffffcc 0 36px 0;}
+
+div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(4), div.ek-dia div.ek-dia-in div.in input[name=diario]:checked + label:nth-of-type(8){box-shadow: #ffff00cc 0 18px 0, #ffff00cc 0 36px 0;}
+
+div.ek-dia div.ek-dia-in div.in #entrada1:checked ~ div.entradas div.entrada1, div.ek-dia div.ek-dia-in div.in #entrada2:checked ~ div.entradas div.entrada2, div.ek-dia div.ek-dia-in div.in #entrada3:checked ~ div.entradas div.entrada3, div.ek-dia div.ek-dia-in div.in #entrada4:checked ~ div.entradas div.entrada4, div.ek-dia div.ek-dia-in div.in #entrada5:checked ~ div.entradas div.entrada5, div.ek-dia div.ek-dia-in div.in #entrada6:checked ~ div.entradas div.entrada6, div.ek-dia div.ek-dia-in div.in #entrada7:checked ~ div.entradas div.entrada7, div.ek-dia div.ek-dia-in div.in #entrada8:checked ~ div.entradas div.entrada8, div.ek-dia div.ek-dia-in div.in #entrada9:checked ~ div.entradas div.entrada9, div.ek-dia div.ek-dia-in div.in #entrada10:checked ~ div.entradas div.entrada10, div.ek-dia div.ek-dia-in div.in #portada:checked ~ div.entradas div.entradaportada {opacity: 1; z-index: 3;}
+</style>
+<body style="background: url('Amici.jpg') no-repeat center center fixed; /* Sostituisci 'your-image.jpg' con il percorso ;">
+    
+
+<br /><br /><div class="ek-dia"><input id="bookop" type="checkbox" name="bookop"><label for="bookop"></label><div class="ek-in-cov"> </div>
+ <div class="ek-cov"><span>PER TE</span></div>
+ 
+ <div class="ek-dia-in"><div class="in">
+  <input id="entrada1" type="radio" name="diario" checked><label for="entrada1"></label><!--
+
+
+-->  <input id="entrada2" type="radio" name="diario"><label for="entrada2"></label><!--
+
+
+-->  <input id="entrada3" type="radio" name="diario"><label for="entrada3"></label><!--
+
+
+-->  <input id="entrada4" type="radio" name="diario"><label for="entrada4"></label><!--
+
+
+-->  <input id="entrada5" type="radio" name="diario"><label for="entrada5"></label><!--
+
+
+-->  <input id="entrada6" type="radio" name="diario"><label for="entrada6"></label><!--
+
+
+-->  <input id="entrada7" type="radio" name="diario"><label for="entrada7"></label><!--
+
+
+-->  <input id="entrada8" type="radio" name="diario"><label for="entrada8"></label><!--
+
+
+-->  <input id="entrada9" type="radio" name="diario"><label for="entrada9"></label><!--
+
+
+-->  <input id="entrada10" type="radio" name="diario"><label for="entrada10"></label>
+  
+  <input id="portada" type="radio" name="diario" checked>
+  
+  <div class="entradas">
+  <div class="entradaportada"> Prima che tu legga, devi sapere che questo sito l'ho fatto ieri notte, piangendo oltretutto, e che non è completo o, per meglio dire, mancano delle sezioni che devo sviluppare ancora. Però, se tu lo desidererai, lo cancellerò senza fare obiezioni. Quello che è già fatto ha lo scopo di cercare di farti stare meglio, ma se non ci riuscisse, beh, io mi sentirei inutile. Adesso, per iniziare, schiaccia sulla linguetta verde. Per tornare alla home, devi andare indietro con la freccetta del telefono.</div>
+   
+   <div class="entrada1"><span><nm>PER FARTI RICORDARE</nm> Ho scritto e realizzato questo sito perché so che può sembrare stupido, però so come ti senti adesso e so che non è bello. Quando ti senti completamente sbagliata e ti dai la colpa per tutto, ci si sente una merda. Io sono qui perché, anche se non lo vuoi ammettere, tu non hai fatto nulla di male e meriti tanto, non di certo di soffrire.
+    <br /><br /></span>
+    
+    <span>Vorrei partire col dire che tu fai tantissimo per molte persone ogni giorno, a partire da me, il quale, senza di te, ormai non ci sarebbe più. Ma ovviamente non solo per me, anche per tuo padre, tuo fratello, tua nonna e, come dimenticarsi di Paco In tutte queste giornate passate a lavorare, ti sei sempre riservata poco tempo per te stessa e, beh, alla lunga è stancante fare tutto quello che fai. Io non ne sarei capace e sono sicuro che anche tuo padre e tuo fratello lo sanno e ti vogliono bene, nonostante non te lo dimostrino molto. Sapere che qualcuno ti ha spezzato il cuore mi fa arrabbiare e piangere allo stesso tempo, perché tu non te lo meriti. Anzi, ti meriteresti il mondo, perché poche persone hanno un cuore buono come il tuo </span></div>
+   
+   <div class="entrada2"><span class="rosa"><nm>LE COLPE</nm> Allora, questo è un tema molto delicato perché, ovviamente, e giustamente, io non conosco tutta la questione. Però, per quel che so, questa volta tu hai veramente poche colpe e sono qui per fartelo capire. Sì, hai sbagliato in diverse occasioni, come quando hai fatto sedere la tua ex sulle tue gambe o quando hai dimenticato di mettere l’anello nel dito giusto, ma non è comparabile con quello che ha fatto lei. Partendo dall'uscire molto spesso con il suo ex (non sarebbe un problema se non fosse che erano molto legati), passando per il dare buca a te sempre per uscire con lui. Questo per me è inaccettabile, perché non puoi pretendere attenzioni da qualcuno quando sei la prima a non darne. Ma la cosa ancora più grave è il tradimento, perché, dal mio punto di vista, se non ti piaccio più va bene, me lo dici e la finiamo; non ti metti a baciare altre persone </span>
+    
+<span>Dando addirittura la colpa al tuo partner perché, secondo te, usciva troppo con le sue ex. So che tu ti senti una merda, ma devi capire che non è colpa tua. Martina, per come la giri e la rigiri, ha sbagliato in tutte le salse e non ha pensato a te, che comunque gli stavi dando tantissimo e ti stavi cercando di adattare alle sue assurde richieste.</span></div>
+   
+   <div class="entrada3"><span class="azul"><nm>;</nm>Adesso vorrei che tu mettessi un punto e virgola alla tua vita; perché io non voglio vederti stare male e, come se qualcuno prendesse un accendino e bruciasse una parte di me, non voglio che accada di nuovo. So che tu probabilmente starai pensando che io non ho nessun diritto di dirti cosa fare, però io ti dico e ti giuro che lo faccio solo per te; perché non voglio che ti accada nulla e non voglio vederti stare male. Basto io a farlo e a essere una causa persa. Quindi, so che è difficile, ma ti chiedo in ginocchio di non chiuderti in te stessa, di non tirare su altri muri; perché non fa bene a te e, soprattutto, per come sono fatto io, mi farò del male cercando di abbatterli. Ho visto la te gentile, la te che non mostri a molti, e non voglio vederla sparire come ho visto sparire il me felice, il me colorato, pieno di vita.</span>
+    
+<span></span></div>
+   
+   <div class="entrada4"><span class="verd"><nm>LA CONCENTRAZIONE</nm>Adesso voglio che ti concentri sul pattinaggio, e non perché sono senza cuore, ma perché so quanto è importante per te. Quindi, voglio che lasci da parte tutti i tuoi pensieri e che dia il massimo per riuscire a vincere questa ultima gara; perché so che hai le capacità e ne sei in grado. Voglio vederti tornare e sentirmi dire: "Ce l'ho fatta, ho vinto."
+
+    Ricorda però che sei una persona e hai dei limiti; non voglio che tu ti faccia male, quindi non voglio che spingi fino al punto di rottura. Voglio che, a testa alta, tu dia la massima concentrazione. Se per farlo dovrai smettere di consolarmi, va bene, non è un problema. Io, se vuoi, smetterò di raccontarti dei miei problemi.
+    
+    Detto questo, ti saluto, ma ti dico ancora una cosa: VAI GIULIA, CE LA PUOI FARE!!</span>
+    
+<span></span></div>
+   
+   <div class="entrada5"><span></span>
+    
+<span></span></div>
+   
+   <div class="entrada6"><span> <br /><br /></span>
+    
+<span></span></div>
+   
+   <div class="entrada7"><span><br /><br /></span>
+    
+<span></span></div>
+   
+   <div class="entrada8"><span></span>
+    
+<span></span></div>
+   
+   <div class="entrada9"><span></span>
+    
+<span></span></div>
+   
+   <div class="entrada10"><span></span>
+    
+<span></span></div>
+   
+   
+   
+  </div>
+  
+  
+  
+  
+  
+  </div></div>
+ 
+ 
+</div>
+</body>
+</html>

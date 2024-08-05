@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>sito css</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.ico" type="ico" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Shantell+Sans");
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Shantell Sans", serif;
+            background: url('sfondo.webp') no-repeat center center fixed; /* Sostituisci 'your-image.jpg' con il percorso della tua immagine */
+            background-size: cover; /* Adatta l'immagine di sfondo alla pagina */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Allineamento a sinistra */
+            height: 100%;
+            padding: 20px; /* Padding per evitare che il contenuto tocchi i bordi dello schermo */
+            text-decoration: none;
+        }
+
+        .button {
+            padding: 15px 20px; /* Ridotto padding per schermi piccoli */
+            margin: 10px;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 24px; /* Ridotta dimensione del font per schermi piccoli */
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .button span {
+            margin-left: 10px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .button:hover span {
+            transform: scale(1.1);
+        }
+
+        .button:hover {
+            color: #eb1857;
+        }
+
+        p {
+            background-color: #0808083a;
+            color: #d31515;
+            font-size: 24px; /* Ridotta dimensione del font per schermi piccoli */
+            padding: 10px;
+            border-radius: 22px; /* Aggiunto bordo arrotondato per migliorare l'estetica */
+        }
+
+        @media screen and (max-width: 600px) {
+            .button {
+                font-size: 18px; /* Ulteriore riduzione della dimensione del font per schermi molto piccoli */
+                padding: 10px 15px; /* Riduzione del padding per schermi molto piccoli */
+            }
+
+            p {
+                font-size: 18px; /* Ridotta dimensione del font per schermi piccoli */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>PER TE CHE SEI UNA DELLE DUE PERSONE PER CUI DAREI LA VITA PERCHE PER ME SEI IMPORTANTISSIMA</p>
+        <a style="text-decoration: none;" href="frasi.html" class="button" id="button3"><span>FRASI</span></a>
+        <a style="text-decoration: none;" href="song.html" class="button" id="button4"><span>CANZONI</span></a>
+    </div>
+</body>
+</html>
+
